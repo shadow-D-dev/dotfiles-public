@@ -1,0 +1,1 @@
+- This is the module to check for the npm updates for cli applications.
