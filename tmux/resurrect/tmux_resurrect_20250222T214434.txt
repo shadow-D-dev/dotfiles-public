@@ -1,7 +1,0 @@
-pane	0	1	0	:	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
-pane	0	2	0	:-	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	1	nvim	:nvim
-pane	0	3	1	:*	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config	1	nvim	:nvim
-window	0	1	:nvim	0	:	bf5d,230x64,0,0,0	:
-window	0	2	:nvim	0	:-	bf5e,230x64,0,0,1	:
-window	0	3	:nvim	1	:*	bc9f,75x64,0,0,2	:
-state	0	

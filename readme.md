@@ -8,3 +8,4 @@ Current Setup :-
 - status bar :- sketchybar
 - multiplexer :- tmux
 - neovim distro :- lazy.nvim
+
