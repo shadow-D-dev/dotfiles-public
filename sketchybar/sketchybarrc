@@ -1,13 +1,13 @@
 #!/bin/bash
 
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
 
-ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
+ITEM_DIR="$CONFIG_DIR/items"     # Directory where the items are configured
 PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
 
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-PADDINGS=3 # All paddings use this value (icon, label, background)
+PADDINGS=0    # All paddings use this value (icon, label, background)
 
 # aerospace setting
 AEROSPACE_FOCUSED_MONITOR_NO=$(aerospace list-workspaces --focused)
@@ -17,35 +17,36 @@ AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR=$(aerospace list-windows --workspac
 HELPER=git.felix.helper
 killall helper
 (cd $CONFIG_DIR/helper && make)
-$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
+$CONFIG_DIR/helper/helper $HELPER >/dev/null 2>&1 &
 
 # Unload the macOS on screen indicator overlay for volume change
-launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=45
+  height=36
   color=$BAR_COLOR
   border_width=2
   border_color=$BAR_BORDER_COLOR
-  shadow=off
+  shadow=on
   position=top
   sticky=on
-  padding_right=0
-  padding_left=0
-  y_offset=0
-  margin=20
+  padding_right=12
+  padding_left=12
+  y_offset=4
+  margin=11
   topmost=window
   color=$BAR_COLOR
   border_color=$BAR_BORDER_COLOR
+  blur_radius=100
+  corner_radius=12
 )
 
 sketchybar --bar "${bar[@]}"
-
 # Setting up default values
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Regular:14.0"
+  icon.font="$FONT:Regular:13.0"
   icon.color=$ICON_COLOR
   icon.padding_left=$PADDINS
   icon.padding_right=$PADDINGS
@@ -73,9 +74,8 @@ defaults=(
 
 sketchybar --default "${defaults[@]}"
 
-
 # Left
-source "$ITEM_DIR/apple.sh"
+# source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/front_app.sh"
 #source "$ITEM_DIR/yabai.sh"
@@ -86,13 +86,13 @@ source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/input_source.sh"
-source "$ITEM_DIR/battery.sh"
+# source "$ITEM_DIR/input_source.sh"
+# source "$ITEM_DIR/battery.sh"
 #source "$ITEM_DIR/brew.sh"
 #source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/wifi.sh"
+# source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/svim.sh"
+# source "$ITEM_DIR/svim.sh"
 
 source "$ITEM_DIR/cpu.sh"
 # source "$ITEM_DIR/weather.sh"
@@ -102,4 +102,3 @@ sketchybar --hotload on
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
 echo "sketchybar configuation loaded.."
-

@@ -1,0 +1,10 @@
+[[session]]
+name = "Downloads 📥"
+path = "~/Downloads"
+startup_command = "ls"
+
+[[session]]
+name = "tmux config"
+path = "~/.Config/tmux"
+startup_command = "neovim tmux.conf"
+preview_command = "bat --color=always ~/c/dotfiles/.config/tmux/tmux.conf"

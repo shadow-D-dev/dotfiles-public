@@ -9,15 +9,40 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
-vim.opt.rtp:prepend(lazypath)
 
-vim.cmd([[
-  augroup TransparentBackground
-    autocmd!
-    autocmd ColorScheme * highlight Normal guibg=NONE
-    autocmd ColorScheme * highlight NormalFloat guibg=NONE
-    autocmd ColorScheme * highlight Pmenu guibg=NONE
-    autocmd ColorScheme * highlight StatusLine guibg=NONE
-    autocmd ColorScheme * highlight WinSeparator guibg=NONE
-  augroup END
-]])
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	defaults = {
+		lazy = false,
+		version = "*",
+		checker = { enabled = true }, -- automatically check for plugin updates
+		performance = {
+			rtp = {
+				-- disable some rtp plugins
+				disabled_plugins = {
+					"gzip",
+					-- "matchit",
+					-- "matchparen",
+					-- "netrwPlugin",
+					"tarPlugin",
+					"tohtml",
+					"tutor",
+					"zipPlugin",
+				},
+			},
+		},
+	},
+	ui = {
+		border = "rounded",
+		wrap = true,
+		size = {
+			width = 0.8,
+			height = 0.8,
+		},
+		backdrop = 40,
+		pills = true,
+	},
+})

@@ -5,15 +5,16 @@ return {
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
-		dashboard = { enabled = true },
-		explorer = { enabled = true },
+		explorer = { enabled = true, show_hidden = true },
 		indent = { enabled = true },
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
-		picker = { enabled = true },
+		picker = { enabled = true, layout = "ivy", hidden = true, ignored = true },
+		buffer = { enabled = true, layout = "ivy" },
+		git_log = { enabled = true, layout = "telescope" },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
@@ -22,6 +23,22 @@ return {
 		styles = {
 			notification = {
 				-- wo = { wrap = true } -- Wrap notifications
+			},
+		},
+		dashboard = {
+			preset = {
+				keys = {
+					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+					{ icon = " ", key = "<esc>", desc = "Quit", action = ":qa" },
+				},
+				header = [[
+ ███████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ██╗    ██╗
+ ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██║    ██║
+ ███████╗███████║███████║██║  ██║██║   ██║██║ █╗ ██║
+ ╚════██║██╔══██║██╔══██║██║  ██║██║   ██║██║███╗██║
+ ███████║██║  ██║██║  ██║██████╔╝╚██████╔╝╚███╔███╔╝
+ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝
+      ]],
 			},
 		},
 	},
@@ -270,6 +287,7 @@ return {
 			end,
 			desc = "Icons",
 		},
+
 		{
 			"<leader>sj",
 			function()
@@ -511,81 +529,5 @@ return {
 				})
 			end,
 		},
-		{
-			"<leader>tt",
-			function()
-				Snacks.picker.grep({
-					prompt = " ",
-					-- pass your desired search as a static pattern
-					search = "^\\s*- \\[ \\]",
-					-- we enable regex so the pattern is interpreted as a regex
-					regex = true,
-					-- no “live grep” needed here since we have a fixed pattern
-					live = false,
-					-- restrict search to the current working directory
-					dirs = { vim.fn.getcwd() },
-					-- include files ignored by .gitignore
-					args = { "--no-ignore" },
-					-- Start in normal mode
-					on_show = function()
-						vim.cmd.stopinsert()
-					end,
-					finder = "grep",
-					format = "file",
-					show_empty = true,
-					supports_live = false,
-					layout = "ivy",
-				})
-			end,
-			desc = "[P]Search for incomplete tasks",
-		},
-		dashboard = {
-			preset = {
-				keys = {
-					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
-					{ icon = " ", key = "<esc>", desc = "Quit", action = ":qa" },
-				},
-				header = [[
-                  ███████╗██╗  ██╗ █████╗ ██████╗  ██████╗ ██╗    ██╗
-                  ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔═══██╗██║    ██║
-                  ███████╗███████║███████║██║  ██║██║   ██║██║ █╗ ██║
-                  ╚════██║██╔══██║██╔══██║██║  ██║██║   ██║██║███╗██║
-                  ███████║██║  ██║██║  ██║██████╔╝╚██████╔╝╚███╔███╔╝
-                  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝
-      ]],
-			},
-		},
-		init = function()
-			vim.api.nvim_create_autocmd("User", {
-				pattern = "VeryLazy",
-				callback = function()
-					-- Setup some globals for debugging (lazy-loaded)
-					_G.dd = function(...)
-						Snacks.debug.inspect(...)
-					end
-					_G.bt = function()
-						Snacks.debug.backtrace()
-					end
-					vim.print = _G.dd -- Override print to use snacks for `:=` command
-
-					-- Create some toggle mappings
-					Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-					Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-					Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
-					Snacks.toggle.diagnostics():map("<leader>ud")
-					Snacks.toggle.line_number():map("<leader>ul")
-					Snacks.toggle
-						.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
-						:map("<leader>uc")
-					Snacks.toggle.treesitter():map("<leader>uT")
-					Snacks.toggle
-						.option("background", { off = "light", on = "dark", name = "Dark Background" })
-						:map("<leader>ub")
-					Snacks.toggle.inlay_hints():map("<leader>uh")
-					Snacks.toggle.indent():map("<leader>ug")
-					Snacks.toggle.dim():map("<leader>uD")
-				end,
-			})
-		end,
 	},
 }
