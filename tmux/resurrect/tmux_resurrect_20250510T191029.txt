@@ -1,0 +1,34 @@
+pane	0	1	0	:-	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	0	2	1	:*	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	1	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config/lspnvim	0	nvim	:nvim
+pane	1	1	1	:*	1	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config/takuya	1	nvim	:nvim
+pane	1	2	0	:	0	shadow-D-dev.local	:/Users/shadow./.local	1	nvim	:nvim
+pane	1	3	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	nvim	:nvim
+pane	1	4	0	:-	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO	1	zsh	:
+pane	2	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd	0	zsh	:
+pane	2	1	1	:*	1	index.ts + (~/Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd/src) - NVIM	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd	1	nvim	:nvim
+pane	2	1	1	:*	2	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd	0	node	:npm run dev   
+pane	2	1	1	:*	3	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd	0	node	:npm run dev   
+pane	2	2	0	:	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	0	zsh	:
+pane	2	2	0	:	1	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	1	zsh	:
+pane	2	3	0	:-	0	Todo.tsx (~/Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd/src) - NVIM	:/Users/shadow.	1	atac	:atac
+pane	3	1	1	:*	0	shadow-D-dev.local	:/Users/shadow.	1	btop	:btop
+pane	4	1	1	:*	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	5	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO	1	zsh	:
+pane	6	1	1	:*	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	7	1	1	:*	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+window	0	1	:todo	0	:-	cd5e,230x58,0,0,1	off
+window	0	2	:notes	1	:*	cd5f,230x58,0,0,2	off
+window	1	1	:config	1	:*	3db4,230x58,0,0{115x58,0,0,3,114x58,116,0,20}	off
+window	1	2	:local	0	:	cd61,230x58,0,0,4	off
+window	1	3	:nvim	0	:	cd62,230x58,0,0,5	:
+window	1	4	:zsh	0	:-	cd64,230x58,0,0,7	:
+window	2	1	:ToDo	1	:*	bb1c,230x58,0,0[230x41,0,0{120x41,0,0,8,109x41,121,0,9},230x16,0,42{120x16,0,42,10,109x16,121,42,11}]	off
+window	2	2	:ModernClinic	0	:	e26a,230x58,0,0[230x49,0,0,12,230x8,0,50,13]	off
+window	2	3	:atac	0	:-	66e3,230x58,0,0,14	:
+window	3	1	:btop	1	:*	66e4,230x58,0,0,15	:
+window	4	1	:zsh	1	:*	66e5,230x58,0,0,16	:
+window	5	1	:zsh	1	:*	66e6,230x58,0,0,17	:
+window	6	1	:zsh	1	:*	66e7,230x58,0,0,18	:
+window	7	1	:zsh	1	:*	66e8,230x58,0,0,19	:
+state	1	2

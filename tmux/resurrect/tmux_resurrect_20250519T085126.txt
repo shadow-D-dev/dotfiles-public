@@ -1,0 +1,36 @@
+pane	0	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	0	2	0	:-	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	1	1	0	:	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config	1	nvim	:nvim
+pane	1	2	0	:	0	shadow-D-dev.local	:/Users/shadow./.local	1	nvim	:nvim
+pane	1	3	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	1	4	0	:-	0	shadow-D-dev.local	:/Users/shadow.	1	nvim	:nvim
+pane	1	5	1	:*	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	2	1	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	2	2	0	:-	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	1	nvim	:nvim
+pane	2	2	0	:-	1	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	0	zsh	:
+pane	2	3	0	:	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/Restaurent-MERN	1	nvim	:nvim
+pane	2	3	0	:	1	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/Restaurent-MERN	0	zsh	:
+pane	2	4	1	:*Z	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/marcus/Gamementor/frontend	1	nvim	:nvim
+pane	2	4	1	:*Z	1	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/marcus/Gamementor/Server	0	nvim	:nvim
+pane	2	4	1	:*Z	2	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/marcus/Gamementor/frontend	0	zsh	:
+pane	2	4	1	:*Z	3	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/marcus/Gamementor/Server	0	zsh	:
+pane	2	5	0	:	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/marcus/Gamementor	1	nvim	:nvim
+pane	2	6	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	3	1	0	:-	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	3	2	1	:*	0	Yazi: ~/Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd/src	:/Users/shadow./Desktop/REPOS	1	zsh	:
+window	0	1	:todo	1	:*	cd5e,230x58,0,0,1	off
+window	0	2	:notes	0	:-	cd5f,230x58,0,0,2	off
+window	1	1	:config	0	:	caa0,75x58,0,0,3	off
+window	1	2	:local	0	:	cd61,230x58,0,0,4	off
+window	1	3	:zsh	0	:	cd62,230x58,0,0,5	:
+window	1	4	:nvim	0	:-	caa3,75x58,0,0,6	:
+window	1	5	:[tmux]	1	:*	e6df,230x58,0,0,20	:
+window	2	1	:ToDo	0	:	cd64,230x58,0,0,7	off
+window	2	2	:ModernClinic	0	:-	15a0,230x58,0,0[230x44,0,0,8,230x13,0,45,9]	off
+window	2	3	:nvim	0	:	94b9,230x58,0,0[230x39,0,0,10,230x18,0,40,11]	:
+window	2	4	:marcus's project	1	:*Z	3824,230x58,0,0[230x44,0,0{115x44,0,0,12,114x44,116,0,13},230x13,0,45{115x13,0,45,14,114x13,116,45,15}]	off
+window	2	5	:nvim	0	:	66e5,230x58,0,0,16	:
+window	2	6	:Posting	0	:	66e6,230x58,0,0,17	off
+window	3	1	:zsh	0	:-	66e7,230x58,0,0,18	:
+window	3	2	:zsh	1	:*	66e8,230x58,0,0,19	:
+state	1	0

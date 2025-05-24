@@ -1,7 +1,0 @@
-pane	0	1	0	:-	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
-pane	0	2	1	:*	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
-pane	1	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config	1	nvim	:nvim
-window	0	1	:nvim	0	:-	d2bd,114x59,0,0,0	:
-window	0	2	:nvim	1	:*	d2be,114x59,0,0,1	:
-window	1	1	:nvim	1	:*	d2bf,114x59,0,0,2	:
-state	1	0

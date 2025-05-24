@@ -1,7 +1,0 @@
-pane	0	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
-pane	1	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config	1	nvim	:nvim
-pane	1	2	0	:-	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
-window	0	1	:nvim	1	:*	cebe,114x58,0,0,1	:
-window	1	1	:nvim	1	:*	cebf,114x58,0,0,2	:
-window	1	2	:zsh	0	:-	cec0,114x58,0,0,3	:
-state	1	0

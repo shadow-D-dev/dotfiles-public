@@ -1,0 +1,31 @@
+pane	0	1	0	:-	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	0	2	1	:*	0	shadow-D-dev.local	:/Users/shadow./Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes	1	nvim	:nvim
+pane	1	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./github/dotfiles-public/.config	1	nvim	:nvim
+pane	1	2	0	:-	0	shadow-D-dev.local	:/Users/shadow./.local	1	nvim	:nvim
+pane	1	3	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	nvim	:nvim
+pane	1	4	0	:	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO	1	zsh	:
+pane	2	1	1	:*	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd	0	nvim	:nvim
+pane	2	1	1	:*	1	index.ts (~/Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd/src) - NVIM	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd	1	nvim	:nvim
+pane	2	1	1	:*	2	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd	0	zsh	:
+pane	2	1	1	:*	3	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/BackEnd	0	zsh	:
+pane	2	2	0	:	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	0	zsh	:
+pane	2	2	0	:	1	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ModernClinicFinal/modernclinicfinal	1	zsh	:
+pane	2	3	0	:	0	Todo.tsx (~/Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd/src) - NVIM	:/Users/shadow.	1	zsh	:
+pane	2	4	0	:	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	2	5	0	:-	0	shadow-D-dev.local	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO	1	zsh	:
+pane	3	1	0	:-	0	shadow-D-dev.local	:/Users/shadow.	1	zsh	:
+pane	3	2	1	:*	0	Yazi: ~/Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd/src	:/Users/shadow./Desktop/REPOS/ToDo_MERN/MERN_TODO/FrontEnd/src	1	zsh	:
+window	0	1	:todo	0	:-	cd5e,230x58,0,0,1	off
+window	0	2	:notes	1	:*	cd5f,230x58,0,0,2	off
+window	1	1	:config	1	:*	cd60,230x58,0,0,3	off
+window	1	2	:local	0	:-	cd61,230x58,0,0,4	off
+window	1	3	:nvim	0	:	cd62,230x58,0,0,5	:
+window	1	4	:zsh	0	:	cd63,230x58,0,0,6	:
+window	2	1	:ToDo	1	:*	fa20,230x58,0,0[230x41,0,0{120x41,0,0,7,109x41,121,0,8},230x16,0,42{120x16,0,42,9,109x16,121,42,10}]	off
+window	2	2	:ModernClinic	0	:	6268,230x58,0,0[230x49,0,0,11,230x8,0,50,12]	off
+window	2	3	:zsh	0	:	66e2,230x58,0,0,13	:
+window	2	4	:Posting	0	:	66e3,230x58,0,0,14	off
+window	2	5	:zsh	0	:-	66e4,230x58,0,0,15	:
+window	3	1	:zsh	0	:-	66e5,230x58,0,0,16	:
+window	3	2	:zsh	1	:*	66e6,230x58,0,0,17	:
+state	2	1
