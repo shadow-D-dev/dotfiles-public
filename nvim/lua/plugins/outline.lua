@@ -1,3 +1,4 @@
+
 -- This plugin is for the chapter view of the current file like you get the headings only 
 return{
   "hedyhli/outline.nvim",

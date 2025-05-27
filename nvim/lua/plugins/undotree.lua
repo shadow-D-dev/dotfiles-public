@@ -1,3 +1,4 @@
+
 return {
 	"mbbill/undotree",
 	event = { "BufReadPre", "BufNewFile" }, -- Load when a buffer is opened

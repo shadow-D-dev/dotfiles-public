@@ -28,3 +28,7 @@ opt.swapfile = false
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+-- snacks animations
+vim.g.snacks_animate = false
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = "nc"

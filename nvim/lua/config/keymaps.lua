@@ -79,3 +79,52 @@ vim.keymap.set({ "n", "v" }, "gj", function()
   vim.cmd("nohlsearch")
 end, { desc = "[P]Go to next markdown header" })
 
+-- By default, CTRL-U and CTRL-D scroll by half a screen (50% of the window height)
+-- Scroll by 35% of the window height and keep the cursor centered
+local scroll_percentage = 0.35
+-- Scroll by a percentage of the window height and keep the cursor centered
+vim.keymap.set("n", "<C-d>", function()
+  local lines = math.floor(vim.api.nvim_win_get_height(0) * scroll_percentage)
+  vim.cmd("normal! " .. lines .. "jzz")
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-u>", function()
+  local lines = math.floor(vim.api.nvim_win_get_height(0) * scroll_percentage)
+  vim.cmd("normal! " .. lines .. "kzz")
+end, { noremap = true, silent = true })
+
+-- When jumping with ctrl+d and u the cursors stays in the middle
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<c-u>", "<c-u>zz")
+
+-- Quit or exit neovim, easier than to do <leader>qq
+vim.keymap.set({ "n", "v", "i" }, "<M-q>", "<cmd>wqa<cr>", { desc = "[P]Quit All" })
+
+-- Noice
+
+vim.keymap.set({ "n", "v", "i" }, "<M-h>", function()
+  -- require("noice").cmd("history")
+  require("noice").cmd("all")
+end, { desc = "[P]Noice History" })
+
+-- Dismiss noice notifications
+vim.keymap.set({ "n", "v", "i" }, "<M-d>", function()
+  require("noice").cmd("dismiss")
+end, { desc = "Dismiss All" })
+
+-- -- yank selected text into system clipboard
+-- -- Vim/Neovim has two clipboards: unnamed register (default) and system clipboard.
+-- --
+-- -- Yanking with `y` goes to the unnamed register, accessible only within Vim.
+-- -- The system clipboard allows sharing data between Vim and other applications.
+-- -- Yanking with `"+y` copies text to both the unnamed register and system clipboard.
+-- -- The `"+` register represents the system clipboard.
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[P]Yank to system clipboard" })
+-- pasting the link
+
+vim.keymap.set({ "n", "v", "i" }, "<M-;>", function()
+  -- Insert the text in the desired format
+  vim.cmd("normal! a[]() ")
+  vim.cmd("normal! F(pv2F/lyF[p")
+  -- Leave me in normal mode or command mode
+  vim.cmd("stopinsert")
+end, { desc = "[P]Paste Github link" })
