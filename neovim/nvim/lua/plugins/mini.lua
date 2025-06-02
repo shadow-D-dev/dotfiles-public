@@ -40,7 +40,7 @@ return {
 
   keys = {
     {
-      "<leader>m",
+      "<leader>e",
       function()
         local buf_name = vim.api.nvim_buf_get_name(0)
         local dir_name = vim.fn.fnamemodify(buf_name, ":p:h")
