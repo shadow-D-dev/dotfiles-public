@@ -1,0 +1,17 @@
+
+[keys.normal]
+# Tabs
+"t n" = ":tab-new"
+"t h" = ":tab-prev"
+"t l" = ":tab-next"
+
+# File operations
+"y" = ":yank"
+"d" = ":yank --cut"
+"p" = ":paste"
+
+# Optional reload
+"R" = ":reload"
+
+# Working CD to path with spaces
+"g a" = ':cd "/Users/shadow./Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"'

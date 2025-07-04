@@ -1,3 +1,5 @@
-./nvim/undodir/
-./neovim/nvim/undodir/
-
+nvim/undodir/
+neovim/nvim/undodir/
+lspnvim/nvim/undodir/
+tmux/resurrect/
+raycast/extensions

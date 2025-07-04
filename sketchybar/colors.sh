@@ -21,6 +21,7 @@ export WHITE=0xFFFFFFFF
 export RED=0xffed8796
 export GREEN=0xffa6da95
 export BLUE=0xff8aadf4
+export TOKYOBLUE=0xFF1A1B26
 export BLUR=0x60060607
 export YELLOW=0xffeed49f
 export ORANGE=0xfff5a97f
@@ -39,7 +40,7 @@ export BATTERY_4=0xffee99a0
 export BATTERY_5=0xffed8796
 
 # General bar colors
-export BAR_COLOR=$BLUR
+export BAR_COLOR=$TOKYOBLUE
 export BAR_BORDER_COLOR=$WHITE
 export BACKGROUND_1=$BG1
 export BACKGROUND_2=$BG2
