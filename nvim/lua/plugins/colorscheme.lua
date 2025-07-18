@@ -57,7 +57,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      local transparent = false -- Set to true for transparency
+      local transparent = true -- Set to true for transparency
 
       -- Define TokyoNight color values
       local bg = "#1a1b26"
