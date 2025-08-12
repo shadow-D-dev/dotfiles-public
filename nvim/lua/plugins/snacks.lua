@@ -415,7 +415,7 @@ return {
     },
     -- Other
     {
-      "<leader>z",
+      "<leader>zz",
       function()
         Snacks.zen()
       end,

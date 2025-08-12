@@ -4,12 +4,19 @@ return {
   init = function()
     local function apply_markdown_highlights()
       -- Headline backgrounds
-      local color1_bg = "#5b4996"
+      local color1_bg = "#5b4996 "
       local color2_bg = "#21925b"
       local color3_bg = "#027d95"
       local color4_bg = "#585c89"
       local color5_bg = "#0f857c"
       local color6_bg = "#396592"
+      -- glossy optional
+      -- local color1_bg = "#987afb"
+      -- local color2_bg = "#37f499"
+      -- local color3_bg = "#04d1f9"
+      -- local color4_bg = "#949ae5"
+      -- local color5_bg = "#19dfcf"
+      -- local color6_bg = "#1682ef"
       local color_fg = "#000000"
 
       vim.cmd(string.format("highlight Headline1Bg guifg=%s guibg=%s", color_fg, color1_bg))

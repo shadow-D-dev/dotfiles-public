@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local opt = vim.opt
 -- Basic settings
 opt.number = true
@@ -8,7 +7,6 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
-opt.winborder = "rounded"
 
 --search settings
 opt.ignorecase = true
