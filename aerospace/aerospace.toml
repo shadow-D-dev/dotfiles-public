@@ -33,9 +33,9 @@ on-focus-changed = ['move-mouse window-lazy-center']
 inner.horizontal = 20
 inner.vertical = 20
 outer.top = 50
-outer.left = 700
+outer.left = 15
 outer.bottom = 10
-outer.right = 700
+outer.right = 15
 
 [exec] 
 inherit-env-vars = true 

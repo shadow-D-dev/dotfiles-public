@@ -1,7 +1,9 @@
 vim.g.mapleader = " "
 
-local map = vim.keymap.set 
+local map = vim.keymap.set
 
+vim.keymap.set("n", "<leader>w", ":write<CR>")
+vim.keymap.set("n", "<leader>q", ":quit<CR>")
 -- clear search highlights
 map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
@@ -25,14 +27,6 @@ map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new
 -- lazy package manager
 map("n", "<Leader>l", "<Cmd>Lazy<CR>", { desc = "Open Lazy.nvim" })
 
--- Move Lines
-map("n", "<A-j>", "<cmd>execute 'move .+' . v:count3<cr>==", { desc = "Move Down" })
-map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count3 + 1)<cr>==", { desc = "Move Up" })
-map("i", "<A-j>", "<esc><cmd>m .+3<cr>==gi", { desc = "Move Down" })
-map("i", "<A-k>", "<esc><cmd>m .0<cr>==gi", { desc = "Move Up" })
-map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count3<cr>gv=gv", { desc = "Move Down" })
-map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count3 + 1)<cr>gv=gv", { desc = "Move Up" })
-
 -- custom keympas from LINKARZU
 vim.keymap.set("i", "kj", "<ESC>", { desc = "[P]Exit insert mode with kj" })
 vim.keymap.set({ "n", "v" }, "gh", "^", { desc = "[P]Go to the beginning line" })
@@ -42,3 +36,6 @@ vim.keymap.set("v", "gl", "$h", { desc = "[P]Go to the end of the line" })
 -- save all
 vim.keymap.set("n", "<leader>a", "gg<S-v>Gy")
 
+-- Map Kitty’s custom sequences
+vim.keymap.set("n", "<Esc>[74;9u", ":m .+1<CR>==", { noremap = true, silent = true }) -- Right Alt+j move line down
+vim.keymap.set("n", "<Esc>[75;9u", ":m .-2<CR>==", { noremap = true, silent = true }) -- Right Alt+k move line up

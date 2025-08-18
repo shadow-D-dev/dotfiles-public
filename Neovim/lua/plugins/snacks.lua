@@ -4,23 +4,155 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	layout = {
-		root = true, -- this is essential
+		root = true,
 		type = "row",
 		items = { ... },
 	},
 	opts = {
-		bigfile = { enabled = false },
-		explorer = { enabled = true },
+		-- animate starts here
+		animate = {
+			enabled = true,
+			fps = 60,
+			duration = 150,
+			easing = "outQuad",
+
+			resize = {
+				enabled = true,
+				duration = 150,
+				easing = "outCubic",
+			},
+			cursor = {
+				enabled = true,
+				duration = 100,
+				easing = "outQuad",
+			},
+			open = {
+				enabled = true,
+				duration = 120,
+				easing = "outCubic",
+			},
+			close = {
+				enabled = true,
+				duration = 120,
+				easing = "outCubic",
+			},
+		},
+		-- animate ends here
+		-- bigfile starts here
+		bigfile = { enabled = false, size = 1.5 * 1024 * 1024, lines = 20000, notify = true },
+		-- bigfile ends here
+		-- bufdelete starts here
+		bufdelete = { enabled = false },
+		-- bufdelete ends here
+		--indent starts here
+
 		indent = {
 			enabled = true,
+			animate = {
+				enabled = true,
+				style = "out",
+				easing = "linear",
+				delay = 1,
+				duration = 20,
+			},
+			scope = {
+				enabled = true,
+				highlight = "SnacksIndentScope",
+			},
+			highlight = "SnacksIndent",
+			char = "│",
+			show_first_indent_level = false,
+			show_trailing_blankline_indent = false,
 		},
-		input = { enabled = false },
+		-- indent ends here
+		-- input starts here
+		input = {
+			enabled = true,
+			border = "rounded",
+			title_pos = "center",
+			relative = "editor",
+			row = 0.5,
+			col = 0.5,
+			width = 40,
+			win_options = {
+				winblend = 0,
+			},
+			animate = {
+				enabled = true,
+				style = "slide",
+				duration = 200,
+			},
+		},
+		-- input ends here
+		-- notifier starts here
 		notifier = {
-			enabled = false,
+			enabled = true,
 			timeout = 3000,
+			animation = {
+				enabled = true,
+				style = "slide_in_slide_out",
+				duration = 300,
+			},
+			history = {
+				enabled = true,
+				size = 50,
+			},
 		},
+
+		quickfile = { enabled = false },
+		scope = { enabled = false },
+		scroll = {
+			enabled = true,
+			duration = 50,
+			easing = "quadratic",
+			modes = { "n", "v", "x" },
+		},
+
+		statuscolumn = {
+			enabled = true,
+			relative = true,
+			folds = {
+				open = "",
+				closed = "",
+				auto = true,
+				fillchars = true,
+			},
+			signs = {
+				colwidth = 2,
+				priority = 10,
+			},
+			numbers = {
+				enabled = true,
+				style = "relative",
+			},
+			click = {
+				enabled = true,
+				folds = true,
+				signs = true,
+				numbers = true,
+			},
+		},
+		terminal = {
+			enabled = false,
+		},
+		toggle = {},
+		words = { enabled = true },
+		styles = {
+			notification = {},
+		},
+
+		explorer = { enabled = true },
 		picker = {
 			enabled = true,
+			sources = {
+				files = {
+					hidden = true, -- include dotfiles
+					ignored = false, -- include .gitignored files too (optional)
+				},
+			},
+			layout = "ivy",
+			hidden = true,
+			ignored = true,
 			layouts = {
 				ivy = {
 					layout = {
@@ -56,16 +188,6 @@ return {
 						{ win = "preview", title = "{preview}", height = 0.4, border = "top" },
 					},
 				},
-			},
-		},
-		quickfile = { enabled = false },
-		scope = { enabled = false },
-		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
-		words = { enabled = false },
-		styles = {
-			notification = {
-				-- wo = { wrap = true } -- Wrap notifications
 			},
 		},
 
@@ -132,6 +254,14 @@ return {
 				Snacks.picker.recent()
 			end,
 			desc = "Recent",
+		},
+
+		{
+			"<leader>/",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Grep",
 		},
 		-- explorer keybinding
 		{

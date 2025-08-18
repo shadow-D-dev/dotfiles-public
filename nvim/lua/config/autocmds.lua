@@ -27,15 +27,15 @@ end
 
 local function fold_markdown_headings(levels)
   set_foldmethod_expr()
-  vim.cmd("normal! zx")      -- Recalculate folds from expr
-  vim.cmd("redraw!")         -- Ensure UI updates
+  vim.cmd("normal! zx") -- Recalculate folds from expr
+  vim.cmd("redraw!") -- Ensure UI updates
   vim.defer_fn(function()
     local saved_view = vim.fn.winsaveview()
     for _, level in ipairs(levels) do
       fold_headings_of_level(level)
     end
     vim.fn.winrestview(saved_view)
-  end, 10)  -- Small delay to ensure folds are applied first
+  end, 10) -- Small delay to ensure folds are applied first
 end
 
 -- Toggle fold under cursor
@@ -251,3 +251,5 @@ end, { desc = "[P]Fold all headings level 4 or above" })
 --   fold_markdown_headings({ 6, 5, 4 })
 --   vim.cmd("normal! zz") -- center the cursor line on screen
 -- end, { desc = "[P]Fold all headings level 4 or above" })
+--
+-- Auto-continue Markdown lists / todos on Enter (and <C-m>)

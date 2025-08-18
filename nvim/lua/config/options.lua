@@ -33,3 +33,54 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 vim.g.snacks_animate = false
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nc"
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    local function continue_list()
+      local line = vim.api.nvim_get_current_line()
+      local indent = line:match("^%s*") or ""
+
+      -- Numbered list
+      local num = line:match("^%s*(%d+)%.%s*")
+      if num then
+        return indent .. (tonumber(num) + 1) .. ". "
+      end
+
+      -- Checkbox task
+      local task = line:match("^%s*([%-%*%+]%s+%[[ xX]?%]%s+)")
+      if task then
+        local bullet = task:match("^[%-%*%+]")
+        return indent .. bullet .. " [ ] "
+      end
+
+      -- Bullet list
+      local bullet = line:match("^%s*([%-%*%+])%s+")
+      if bullet then
+        return indent .. bullet .. " "
+      end
+
+      -- Todo keyword
+      local todo = line:match("^%s*([Tt][Oo][Dd][Oo]:?)%s*")
+      if todo then
+        return indent .. "TODO "
+      end
+
+      return indent
+    end
+
+    -- Insert-mode continuation (Enter)
+    vim.keymap.set("i", "<CR>", function()
+      return "<CR>" .. continue_list()
+    end, { buffer = true, expr = true })
+
+    -- Normal mode continuation (o / O)
+    vim.keymap.set("n", "o", function()
+      return "o" .. continue_list()
+    end, { buffer = true, expr = true })
+
+    vim.keymap.set("n", "O", function()
+      return "O" .. continue_list()
+    end, { buffer = true, expr = true })
+  end,
+})

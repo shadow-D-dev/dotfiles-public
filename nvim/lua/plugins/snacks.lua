@@ -17,7 +17,18 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true, layout = "ivy", hidden = true, ignored = true },
+    picker = {
+      enabled = true,
+      sources = {
+        files = {
+          hidden = true, -- include dotfiles
+          ignored = false, -- include .gitignored files too (optional)
+        },
+      },
+      layout = "ivy",
+      hidden = true,
+      ignored = true,
+    },
     buffer = { enabled = true, layout = "ivy" },
     git_log = { enabled = true, layout = "telescope" },
     quickfile = { enabled = true },
