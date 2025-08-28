@@ -9,35 +9,9 @@ return {
 		items = { ... },
 	},
 	opts = {
-		-- animate starts here
 		animate = {
-			enabled = true,
-			fps = 60,
-			duration = 150,
-			easing = "outQuad",
-
-			resize = {
-				enabled = true,
-				duration = 150,
-				easing = "outCubic",
-			},
-			cursor = {
-				enabled = true,
-				duration = 100,
-				easing = "outQuad",
-			},
-			open = {
-				enabled = true,
-				duration = 120,
-				easing = "outCubic",
-			},
-			close = {
-				enabled = true,
-				duration = 120,
-				easing = "outCubic",
-			},
+			enabled = false,
 		},
-		-- animate ends here
 		-- bigfile starts here
 		bigfile = { enabled = false, size = 1.5 * 1024 * 1024, lines = 20000, notify = true },
 		-- bigfile ends here
@@ -102,10 +76,7 @@ return {
 		quickfile = { enabled = false },
 		scope = { enabled = false },
 		scroll = {
-			enabled = true,
-			duration = 50,
-			easing = "quadratic",
-			modes = { "n", "v", "x" },
+			enabled = false,
 		},
 
 		statuscolumn = {
@@ -265,7 +236,7 @@ return {
 		},
 		-- explorer keybinding
 		{
-			"<leader><space>",
+			"<leader>e",
 			function()
 				Snacks.explorer()
 			end,

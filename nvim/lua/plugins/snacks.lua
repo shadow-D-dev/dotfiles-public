@@ -22,7 +22,7 @@ return {
       sources = {
         files = {
           hidden = true, -- include dotfiles
-          ignored = false, -- include .gitignored files too (optional)
+          ignored = true, -- include .gitignored files too (optional)
         },
       },
       layout = "ivy",

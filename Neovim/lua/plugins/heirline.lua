@@ -7,6 +7,8 @@ return {
 		local utils = require("heirline.utils")
 		local colors = {
 			bg = "#282a36",
+			newbg = "#323543",
+			newbg2 = "#44475a",
 			fg = "#f8f8f2",
 			red = "#ff5555",
 			green = "#50fa7b",
@@ -15,6 +17,8 @@ return {
 			purple = "#bd93f9",
 			pink = "#ff79c6",
 			orange = "#ffb86c",
+			git_bg = "#3a3a3a", -- gray background for git segment
+			next_bg = "#d0d0d0",
 		}
 
 		-- Mode component
@@ -58,11 +62,17 @@ return {
 		-- Git branch
 		local Git = {
 			condition = conditions.is_git_repo,
-			provider = function()
-				local branch = vim.b.gitsigns_head
-				return branch and ("  " .. branch .. " ") or ""
-			end,
-			hl = { fg = colors.purple, bg = colors.bg },
+			{
+				provider = function()
+					local branch = vim.b.gitsigns_head
+					return branch and ("  " .. branch .. " ") or ""
+				end,
+				hl = { fg = colors.purple, bg = colors.newbg },
+			},
+			{
+				provider = "",
+				hl = { fg = colors.newbg2, bg = colors.bg },
+			},
 		}
 		-- Git diff
 		local GitDiff = {

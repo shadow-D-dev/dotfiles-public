@@ -33,9 +33,9 @@ on-focus-changed = ['move-mouse window-lazy-center']
 inner.horizontal = 20
 inner.vertical = 20
 outer.top = 50
-outer.left = 15
+outer.left = 700
 outer.bottom = 10
-outer.right = 15
+outer.right = 700
 
 [exec] 
 inherit-env-vars = true 
@@ -84,6 +84,7 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
+alt-a = 'workspace A'
 alt-b = 'workspace B'
 alt-e = 'workspace E'
 alt-m = 'workspace M'
@@ -94,7 +95,7 @@ alt-s = 'workspace S'
 alt-t = 'workspace T'
 alt-v = 'workspace V'
 alt-c = 'workspace C'
-alt-y = 'workspace y'
+alt-y = 'workspace Y'
 alt-z = 'workspace Z'
 
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -107,6 +108,7 @@ alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-shift-0 = ['move-node-to-workspace 10', 'workspace 10']
+alt-shift-a = [ 'move-node-to-workspace A','workspace A']
 alt-shift-b = [ 'move-node-to-workspace B','workspace B']
 alt-shift-e = [ 'move-node-to-workspace E','workspace E']
 alt-shift-m = [ 'move-node-to-workspace M','workspace M']
@@ -117,7 +119,7 @@ alt-shift-s = [ 'move-node-to-workspace S','workspace S']
 alt-shift-t = [ 'move-node-to-workspace T','workspace T']
 alt-shift-v = [ 'move-node-to-workspace V','workspace V']
 alt-shift-c = [ 'move-node-to-workspace C','workspace C']
-alt-shift-y = [ 'move-node-to-workspace y','workspace y']
+alt-shift-y = [ 'move-node-to-workspace Y','workspace Y']
 alt-shift-z = [ 'move-node-to-workspace Z','workspace Z']
 
 alt-tab = 'workspace-back-and-forth'
@@ -150,7 +152,7 @@ alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 
 [[on-window-detected]]
 if.app-id = 'com.tdesktop.Telegram'
-run = ['move-node-to-workspace 8']
+run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
@@ -162,7 +164,7 @@ run = ['move-node-to-workspace O']
 
 [[on-window-detected]]
 if.app-id='app.zen-browser.zen'
-run = ['move-node-to-workspace Z']
+run = ['move-node-to-workspace B']
 
 [[on-window-detected]]
 if.app-id='net.kovidgoyal.kitty'
@@ -182,7 +184,7 @@ run = ['move-node-to-workspace C']
 
 [[on-window-detected]]
 if.app-id='com.apple.Safari'
-run = ['move-node-to-workspace 1']
+run = ['move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id='com.google.Chrome'
@@ -202,6 +204,10 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = ['move-node-to-workspace y']
+run = ['move-node-to-workspace Y']
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace A']
 
 

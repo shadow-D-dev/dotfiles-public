@@ -1,5 +1,2 @@
--- In your plugins list (lazy.nvim setup)
-return{
-  "akinsho/bufferline.nvim",
-  enabled = false,  -- This disables the plugin entirely
-}
+-- disabling it atm if removed then its auto installing for some reason will fix this later
+return { "akinsho/bufferline.nvim", enabled = false }

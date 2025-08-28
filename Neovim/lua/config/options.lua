@@ -156,4 +156,3 @@ end, { desc = "[P]Fold all headings level 3 or above" })
 vim.keymap.set("n", "z;", function()
 	fold_markdown_headings({ 6, 5, 4 })
 end, { desc = "[P]Fold all headings level 4 or above" })
-vim.g.markdown_recommended_style = 0

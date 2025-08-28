@@ -36,7 +36,7 @@ return {
 	end,
 	keys = {
 		{
-			"<leader>e",
+			"<leader>m",
 			function()
 				local buf = vim.api.nvim_buf_get_name(0)
 				local dir = (buf ~= "" and vim.fn.fnamemodify(buf, ":p:h")) or vim.uv.cwd()
@@ -52,7 +52,7 @@ return {
 			desc = "MiniFiles (reveal current file)",
 		},
 		{
-			"<leader>E",
+			"<leader>M",
 			function()
 				require("mini.files").open(vim.uv.cwd(), true)
 			end,
