@@ -34,3 +34,5 @@ vim.g.snacks_animate = false
 -- this is for things like links will show only name i.e. [link] and some more in markdown and only for mode nc (normal,command)
 vim.opt.conceallevel = 2
 vim.opt.concealcursor = "nc"
+
+vim.o.wrap = true

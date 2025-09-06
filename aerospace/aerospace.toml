@@ -33,9 +33,9 @@ on-focus-changed = ['move-mouse window-lazy-center']
 inner.horizontal = 20
 inner.vertical = 20
 outer.top = 50
-outer.left = 700
+outer.left = 15
 outer.bottom = 10
-outer.right = 700
+outer.right = 15
 
 [exec] 
 inherit-env-vars = true 
@@ -184,7 +184,7 @@ run = ['move-node-to-workspace C']
 
 [[on-window-detected]]
 if.app-id='com.apple.Safari'
-run = ['move-node-to-workspace S']
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id='com.google.Chrome'

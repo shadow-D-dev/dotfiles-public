@@ -9,9 +9,46 @@ return {
     items = { ... },
   },
   opts = {
+
+    styles = {
+      snacks_image = {
+        relative = "editor",
+        col = -4,
+      },
+
+      notification = {
+        wo = { wrap = true }, -- Wrap notifications
+      },
+    },
+    image = {
+      enabled = true,
+      doc = {
+        inline = vim.g.neovim_mode == "skitty" and true or false,
+        float = true,
+        max_width = vim.g.neovim_mode == "skitty" and 20 or 60,
+        max_height = vim.g.neovim_mode == "skitty" and 10 or 30,
+      },
+    },
     bigfile = { enabled = true },
     explorer = { enabled = true, show_hidden = true },
-    indent = { enabled = true },
+    indent = {
+      enabled = true,
+      animate = {
+        enabled = true,
+        style = "out",
+        easing = "linear",
+        delay = 1,
+        duration = 20,
+      },
+      scope = {
+        enabled = true,
+        highlight = "SnacksIndentScope",
+      },
+      highlight = "SnacksIndent",
+      char = "│",
+      show_first_indent_level = false,
+      show_trailing_blankline_indent = false,
+    },
     input = { enabled = true },
     notifier = {
       enabled = true,
@@ -23,6 +60,7 @@ return {
         files = {
           hidden = true, -- include dotfiles
           ignored = true, -- include .gitignored files too (optional)
+          exclude = { "**/node_modules/**", "**/dist/**", "**/.next/**", "**/.obsidian" },
         },
       },
       layout = "ivy",
@@ -36,11 +74,6 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
-    styles = {
-      notification = {
-        wo = { wrap = true }, -- Wrap notifications
-      },
-    },
     dashboard = {
       preset = {
         keys = {
