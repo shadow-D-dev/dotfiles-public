@@ -9,18 +9,13 @@ return {
 	---@type blink.cmp.Config
 	opts = {
 		completion = {
-			accept = {
-				auto_brackets = {
-					enabled = true,
-				},
-			},
 			menu = {
 				draw = {
 					columns = {
-						{ "label", gap = 10 },
-						{ "kind_icon", gap = 1 },
+						{ "label", gap = 10 }, -- the actual name
+						{ "kind_icon", gap = 1 }, --kind is like snippets,etc and its icon
 						{ "kind" },
-						{ "label_description" },
+						{ "label_description" }, --extra info like module or signature
 					},
 					gap = 1,
 					treesitter = { "lsp" },
@@ -33,10 +28,10 @@ return {
 				auto_show = true,
 				auto_show_delay_ms = 100,
 				window = {
-					border = "single",
+					border = "rounded",
 				},
 			},
-			ghost_text = {
+			ghost_text = { -- inline suggestions as we type , you type fu it will show function()
 				enabled = true,
 			},
 		},
@@ -45,12 +40,11 @@ return {
 			["<C-k>"] = { "select_prev" },
 		},
 		appearance = {
-			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
-		sources = {
+		sources = { --from where it will fetch the completion data
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 	},
-	opts_extend = { "sources.default" },
+	opts_extend = { "sources.default" }, -- if another plugin wants to add its own sources this let it do so
 }
