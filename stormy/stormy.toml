@@ -1,0 +1,8 @@
+provider = "OpenWeatherMap"
+api_key = "6f06a15d582a5d0fe848b171e3b7a2a9"
+city = "Pen"
+units = "metric"
+showcityname = false
+use_colors = true
+live_mode = false
+compact = false

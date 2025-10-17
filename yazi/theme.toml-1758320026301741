@@ -1,0 +1,9 @@
+[flavor]
+dark = "ashen"
+
+[manager]
+# Symbol used for borders (│ ─ ┌ ┐ └ ┘ will be auto-picked)
+border_symbol = "│"
+# Color/style of borders
+border_style = { fg = "#7aa2f7" }  # change hex to match your palette
+

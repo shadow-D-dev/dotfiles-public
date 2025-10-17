@@ -1,0 +1,103 @@
+{
+//     // "window.titleBarStyle": "custom",
+//     "extensions.experimental.affinity": {
+//         "asvetliakov.vscode-neovim": 1
+//     },
+//     "window.zoomLevel": 2,
+//     // arrows beside the folder icons
+//     "material-icon-theme.hidesExplorerArrows": true,
+//     // mini-map
+//     "editor.minimap.enabled": false,
+//     // bottom line which shows git branch and other stuff like lualine
+//     "workbench.statusBar.visible": false,
+//     // the file tree, extension ,etc
+//     "workbench.sideBar.location": "left",
+//     // the white spaces to the left of each code line like ....
+//     "editor.renderWhitespace": "none",
+//     "editor.renderControlCharacters": false,
+//     //relative line numbers
+//     //auto saves file when i do : without actually doing w
+//     "files.autoSave": "onFocusChange",
+//     //disables data sharing with vs code
+//     "telemetry.telemetryLevel": "off",
+//     // self explanatory
+//     "editor.lineNumbers": "relative",
+//     "extensions.autoUpdate": true,
+//     "editor.formatOnSave": true,
+//     "editor.tabSize": 4,
+//     "explorer.confirmDelete": false,
+//     "editor.scrollbar.horizontal": "hidden",
+//     "editor.scrollbar.vertical": "hidden",
+//     "editor.overviewRulerBorder": false,
+//     "editor.cursorBlinking": "solid",
+//     "editor.cursorSmoothCaretAnimation": "on",
+//     "editor.fontLigatures": true,
+//     // the path from project root to the function you are at at top of the code
+//     "breadcrumbs.enabled": false,
+//     // the icons shown on the left search , extensions,etc
+//     "workbench.activityBar.location": "hidden",
+//     "editor.accessibilitySupport": "off",
+//     // Compact folder view in explorer
+//     "explorer.compactFolders": false,
+//     // Show editor tabs
+//     "workbench.editor.showTabs": "none",
+//     // Startup editor (none = empty)
+//     "workbench.startupEditor": "none",
+//     "workbench.iconTheme": "material-icon-theme",
+//     "workbench.colorCustomizations": {
+//         "editorSuggestWidget.selectedBackground": "#231739",
+//         "sideBar.background": "#191521",
+//         "list.activeSelectionBackground": "#231739",
+//         "list.inactiveSelectionBackground": "#231739",
+//         "list.focusBackground": "#231739",
+//         "list.hoverBackground": "#231739",
+//         "terminalCursor.foreground": "#C45DFF",
+//         // Border for hover tooltips (LSP hover, hover info)
+//         "editorHoverWidget.border": "#FFFFFF",
+//     },
+//     "workbench.colorTheme": "Aura Dracula Spirit",
+//     "window.customTitleBarVisibility": "never",
+//  "window.titleBarStyle": "native",
+//   "custom-ui-style.electron": {
+//    "titleBarStyle":"hiddenInset",
+//    "trafficLightPosition" : {
+//     "x":-1,
+//     "y":-1,
+//    } 
+// },
+// "animations.Install-Method": "Custom UI Style",
+// "custom-ui-style.external.imports": [
+//     "file:///Users/shadow./.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+// ]
+// }
+ "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "single",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 8,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.decorations.badges": false,
+  "git.decorations.enabled": false,
+  "window.zoomLevel": 3,
+  "window.customTitleBarVisibility": "never",
+  "window.titleBarStyle": "native",
+  "custom-ui-style.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 20,
+      "y": 16
+    }
+  },
+  "editor.accessibilitySupport": "off",
+}

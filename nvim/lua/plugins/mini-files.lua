@@ -1,6 +1,6 @@
 -- This is the popup files with vim actions support things like dd, yy, etc
 return {
-  "echasnovski/mini.files",
+  "nvim-mini/mini.files",
   opts = function(_, opts)
     opts.mappings = vim.tbl_deep_extend("force", opts.mappings or {}, {
       close = "<esc>",

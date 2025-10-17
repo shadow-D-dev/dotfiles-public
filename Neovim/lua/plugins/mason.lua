@@ -1,7 +1,7 @@
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
@@ -24,7 +24,7 @@ return {
 			},
 		})
 
-		mason_lspconfig.setup({
+		mason_lspconfig.setup({ --Auto-installs these LSP servers if missing.
 			ensure_installed = {
 				"ts_ls",
 				"html",
@@ -35,14 +35,17 @@ return {
 				"emmet_ls",
 				"prismals",
 				"eslint",
+				"marksman",
 			},
 		})
 
-		mason_tool_installer.setup({
+		mason_tool_installer.setup({ --Installs non-LSP tools (formatters, linters).
 			ensure_installed = {
 				"prettier",
 				"stylua",
 				"eslint_d",
+				"markdownlint-cli2",
+				"markdown-toc",
 			},
 		})
 	end,

@@ -1,21 +1,5 @@
 return {
   -- tools
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "stylua",
-        "selene",
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "css-lsp",
-      })
-    end,
-  },
-
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
@@ -24,6 +8,10 @@ return {
       ---@type lspconfig.options
       servers = {
         cssls = {},
+
+        emmet_ls = {
+          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+        },
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -158,9 +146,3 @@ return {
     end,
   },
 }
---name of the file was mason-workaound2.lua
--- mason was giving some issues on latest release so forcefull overided the version
--- return {
---   { "mason-org/mason.nvim", version = "^1.0.0" },
---   { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
--- }

@@ -10,7 +10,7 @@ return {
 	},
 	opts = {
 		animate = {
-			enabled = false,
+			enabled = true,
 		},
 		-- bigfile starts here
 		bigfile = { enabled = false, size = 1.5 * 1024 * 1024, lines = 20000, notify = true },

@@ -29,10 +29,14 @@ opt.swapfile = false
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
--- snacks animations
-vim.g.snacks_animate = false
 -- this is for things like links will show only name i.e. [link] and some more in markdown and only for mode nc (normal,command)
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = "nc"
+opt.conceallevel = 2
+opt.concealcursor = "nc"
 
-vim.o.wrap = true
+opt.wrap = true
+opt.linebreak = true
+opt.breakindent = true
+-- vim.o.showbreak = "↪ " this will show the sign wherever there is linebreak
+vim.opt.breakindentopt = { "shift:2" }
+-- sign column
+vim.opt.signcolumn = "yes"

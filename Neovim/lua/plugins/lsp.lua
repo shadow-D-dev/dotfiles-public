@@ -1,75 +1,103 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
-	config = function()
+	opts = {
+		servers = {
+			lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = { globals = { "vim", "nvim", "bit" } },
+						completion = { callSnippet = "Replace" },
+					},
+				},
+			},
+			graphql = {
+				filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
+			},
+			emmet_ls = {
+				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+			},
+			eslint = {
+				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+				root_dir = require("lspconfig.util").root_pattern(
+					".eslintrc",
+					".eslintrc.json",
+					"package.json",
+					".git"
+				),
+			},
+			marksman = {
+				filetypes = { "markdown", "markdown.mdx" },
+			},
+			ts_ls = {
+				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+				root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+				single_file_support = false,
+			},
+		},
+	},
+	config = function(_, opts)
+		local lspconfig = require("lspconfig")
 		local Snacks = require("snacks")
 		local keymap = vim.keymap
 
+		-- ================================
+		-- LSP Keymaps (on attach)
+		-- ================================
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
-				local opts = { buffer = ev.buf, silent = true }
+				local buf = ev.buf
+				local function map(mode, lhs, rhs, desc)
+					keymap.set(mode, lhs, rhs, { buffer = buf, silent = true, desc = desc })
+				end
 
-				opts.desc = "Go to definition"
-				keymap.set("n", "gd", function()
+				-- Navigation
+				map("n", "gd", function()
 					Snacks.picker.lsp_definitions()
-				end, opts)
-
-				opts.desc = "Go to declaration"
-				keymap.set("n", "gD", function()
+				end, "Go to definition")
+				map("n", "gD", function()
 					Snacks.picker.lsp_declarations()
-				end, opts)
-
-				opts.desc = "Go to implementations"
-				keymap.set("n", "gi", function()
+				end, "Go to declaration")
+				map("n", "gi", function()
 					Snacks.picker.lsp_implementations()
-				end, opts)
-
-				opts.desc = "Show references"
-				keymap.set("n", "gr", function()
+				end, "Go to implementations")
+				map("n", "gr", function()
 					Snacks.picker.lsp_references()
-				end, opts)
-
-				opts.desc = "Go to type definitions"
-				keymap.set("n", "gt", function()
+				end, "Show references")
+				map("n", "gt", function()
 					Snacks.picker.lsp_type_definitions()
-				end, opts)
-
-				opts.desc = "Show LSP symbols"
-				keymap.set("n", "<leader>ss", function()
+				end, "Go to type definitions")
+				map("n", "<leader>ss", function()
 					Snacks.picker.lsp_symbols()
-				end, opts)
-
-				opts.desc = "Show workspace symbols"
-				keymap.set("n", "<leader>sS", function()
+				end, "Show LSP symbols")
+				map("n", "<leader>sS", function()
 					Snacks.picker.lsp_workspace_symbols()
-				end, opts)
+				end, "Show workspace symbols")
 
-				opts.desc = "Code actions"
-				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+				-- Actions
+				map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code actions")
+				map("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
 
-				opts.desc = "Rename symbol"
-				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				-- add in buffer diagnostics
-				opts.desc = "Show line diagnostics"
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+				-- Diagnostics
+				map("n", "<leader>d", vim.diagnostic.open_float, "Show line diagnostics")
+				map("n", "[d", vim.diagnostic.goto_prev, "Go to previous diagnostic")
+				map("n", "]d", vim.diagnostic.goto_next, "Go to next diagnostic")
 
-				opts.desc = "Go to previous diagnostic"
-				keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-
-				opts.desc = "Go to next diagnostic"
-				keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-
-				opts.desc = "Hover documentation"
-				keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-				opts.desc = "Restart LSP"
-				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+				-- Misc
+				map("n", "K", vim.lsp.buf.hover, "Hover documentation")
+				map("n", "<leader>rs", ":LspRestart<CR>", "Restart LSP")
 			end,
 		})
 
+		-- ================================
+		-- Capabilities (for cmp)
+		-- ================================
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+		-- ================================
+		-- Diagnostics UI
+		-- ================================
 		vim.diagnostic.config({
 			signs = {
 				text = {
@@ -81,27 +109,22 @@ return {
 			},
 		})
 
-		vim.lsp.config("*", { capabilities = capabilities })
+		-- ================================
+		-- LSP Server configurations
+		-- ================================
+		for name, server_opts in pairs(opts.servers) do
+			server_opts.capabilities = capabilities
+			lspconfig[name].setup(server_opts)
+		end
 
-		vim.lsp.config("graphql", {
-			filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
-		})
-
-		vim.lsp.config("emmet_ls", {
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
-		})
-
-		vim.lsp.config("eslint", {
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
-		})
-
-		vim.lsp.config("lua_ls", {
-			settings = {
-				Lua = {
-					diagnostics = { globals = { "vim" } },
-					completion = { callSnippet = "Replace" },
-				},
-			},
+		-- ================================
+		-- Markdown formatting (async prettier)
+		-- ================================
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = { "*.md", "*.markdown" },
+			callback = function()
+				vim.system({ "prettier", "--write", vim.api.nvim_buf_get_name(0) })
+			end,
 		})
 	end,
 }

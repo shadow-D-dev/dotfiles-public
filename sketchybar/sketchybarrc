@@ -34,12 +34,12 @@ bar=(
   padding_right=12
   padding_left=12
   y_offset=4
-  margin=10
+  margin=695
   topmost=window
   color=$BAR_COLOR
   border_color=$BAR_BORDER_COLOR
   blur_radius=100
-  corner_radius=12
+  corner_radius=14
 )
 
 sketchybar --bar "${bar[@]}"

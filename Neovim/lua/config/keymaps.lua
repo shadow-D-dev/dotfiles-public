@@ -40,8 +40,6 @@ vim.keymap.set("n", "<leader>a", "gg<S-v>Gy")
 vim.keymap.set("n", "<Esc>[74;9u", ":m .+1<CR>==", { noremap = true, silent = true }) -- Right Alt+j move line down
 vim.keymap.set("n", "<Esc>[75;9u", ":m .-2<CR>==", { noremap = true, silent = true }) -- Right Alt+k move line up
 
--- Previous buffer (like LazyVim H)
+-- Previous & Next buffer (like LazyVim H,L)
 vim.keymap.set("n", "H", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-
--- Next buffer (like LazyVim L)
 vim.keymap.set("n", "L", "<cmd>bnext<CR>", { desc = "Next buffer" })

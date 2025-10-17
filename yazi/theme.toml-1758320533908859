@@ -1,0 +1,7 @@
+[flavor]
+dark = "ashen"
+
+
+[manager]
+border_symbol = "│"
+border_style   = { fg = "#268bd2" }  # or any color you like

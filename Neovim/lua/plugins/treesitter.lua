@@ -2,9 +2,11 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
+	dependencies = {
+		"nvim-treesitter/playground",
+	},
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
-		---@diagnostic disable-next-line: missing-fields
 		treesitter.setup({
 			ensure_installed = {
 				"json",
@@ -42,10 +44,14 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<C-space>",
-					node_incremental = "<C-space>",
-					scope_incremental = false,
-					node_decremental = "<bs>",
+					-- init_selection = "<C-space>",
+					-- node_incremental = "<C-space>",
+					-- scope_incremental = false,
+					-- node_decremental = "<bs>",
+					init_selection = "gnn", -- set to `false` to disable one of the mappings
+					node_incremental = "grn",
+					scope_incremental = "grc",
+					node_decremental = "grm",
 				},
 			},
 		})

@@ -1,9 +1,7 @@
 return {
   "saghen/blink.cmp",
   event = "InsertEnter",
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-  },
+  build = "make install_jsregexp",
   version = "*",
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -44,14 +42,21 @@ return {
     keymap = {
       ["<C-j>"] = { "select_next" },
       ["<C-k>"] = { "select_prev" },
+      ["<S-k>"] = { "scroll_documentation_up", "fallback" },
+      ["<S-j>"] = { "scroll_documentation_down", "fallback" },
+      ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+      ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
     },
     appearance = {
       use_nvim_cmp_as_default = true,
       nerd_font_variant = "mono",
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "snippets", "lsp", "path", "buffer" },
+    },
+
+    snippets = {
+      preset = "luasnip", -- Choose LuaSnip as the snippet engine
     },
   },
-  opts_extend = { "sources.default" },
 }

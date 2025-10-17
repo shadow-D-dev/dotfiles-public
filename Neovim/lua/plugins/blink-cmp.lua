@@ -1,15 +1,14 @@
 return {
 	"saghen/blink.cmp",
+	enabled = true,
 	event = "InsertEnter",
-	dependencies = {
-		"rafamadriz/friendly-snippets",
-	},
 	version = "*",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
 		completion = {
 			menu = {
+				winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 				draw = {
 					columns = {
 						{ "label", gap = 10 }, -- the actual name
@@ -38,13 +37,20 @@ return {
 		keymap = {
 			["<C-j>"] = { "select_next" },
 			["<C-k>"] = { "select_prev" },
+			["<S-k>"] = { "scroll_documentation_up", "fallback" },
+			["<S-j>"] = { "scroll_documentation_down", "fallback" },
+			["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+			["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
 		},
 		appearance = {
+			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
 		sources = { --from where it will fetch the completion data
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "snippets", "lsp", "path", "buffer" },
+		},
+		snippets = {
+			preset = "luasnip", -- Choose LuaSnip as the snippet engine
 		},
 	},
-	opts_extend = { "sources.default" }, -- if another plugin wants to add its own sources this let it do so
 }
