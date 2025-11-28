@@ -34,7 +34,7 @@ bar=(
   padding_right=12
   padding_left=12
   y_offset=4
-  margin=695
+  margin=10
   topmost=window
   color=$BAR_COLOR
   border_color=$BAR_BORDER_COLOR
@@ -69,7 +69,6 @@ defaults=(
   popup.blur_radius=20
   popup.background.shadow.drawing=on
   scroll_texts=on
-
 )
 
 sketchybar --default "${defaults[@]}"

@@ -45,7 +45,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "j" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "j" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -129,7 +129,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "k" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "k" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -213,7 +213,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "h" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "h" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -297,7 +297,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "l" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "l" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -361,7 +361,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "v" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "v" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -425,7 +425,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "b" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "b" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -489,7 +489,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "n" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "n" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -568,7 +568,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "s" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "s" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -645,7 +645,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "f" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "f" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -709,7 +709,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "g" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "g" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -782,7 +782,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "u" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "u" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -863,7 +863,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "i" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "i" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -945,7 +945,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "o" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "o" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -1027,7 +1027,7 @@
               {
                 "from": {
                   "modifiers": { "optional": ["any"] },
-                  "simultaneous": [{ "key_code": "e" }, { "key_code": "p" }],
+                  "simultaneous": [{ "key_code": "d" }, { "key_code": "p" }],
                   "simultaneous_options": {
                     "key_down_order": "strict",
                     "key_up_order": "strict_inverse",
@@ -1120,6 +1120,7 @@
               }
             ]
           },
+
           {
             "description": "shift + Esc, Tilde to ~",
             "manipulators": [
@@ -1169,8 +1170,8 @@
             "description": "Hyper + x to toggle SketchyBar margin and AeroSpace gaps",
             "manipulators": [
               {
+                "type": "basic",
                 "from": {
-                  "key_code": "x",
                   "modifiers": {
                     "mandatory": [
                       "left_shift",
@@ -1178,14 +1179,14 @@
                       "left_option",
                       "left_command"
                     ]
-                  }
+                  },
+                  "key_code": "x"
                 },
                 "to": [
                   {
                     "shell_command": "~/.config/custom-scripts/toggle_margins.sh"
                   }
-                ],
-                "type": "basic"
+                ]
               }
             ]
           }
@@ -1269,4 +1270,3 @@
     }
   ]
 }
-

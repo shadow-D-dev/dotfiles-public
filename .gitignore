@@ -1,6 +1,13 @@
-nvim/undodir/
-neovim/nvim/undodir/
-lspnvim/nvim/undodir/
 tmux/resurrect/
 raycast/extensions
-Neovim/undodir/
+vs-code/User/History/
+vs-code/User/globalStorage/
+vs-code/User/snippets/
+vs-code/User/workspaceStorage/
+vs-code/extensions/
+**/undodir/
+/gh/**
+/iterm2/**
+*.DS_Store
+/raycast/**
+
