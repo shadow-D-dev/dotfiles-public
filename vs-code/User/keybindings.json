@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-{
+/* {
   "key": "space e",
   "command": "workbench.action.toggleSidebarVisibility"
 },
@@ -8,5 +8,10 @@
     "key": "space f",
     "command": "workbench.action.quickOpen",
     "when": "editorTextFocus"
-}
+}, */
+{
+  "key": "ctrl+space",
+  "command": "-focusSuggestion",
+  "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+},
 ]
