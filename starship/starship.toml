@@ -1,0 +1,100 @@
+format = """
+[ ](bg:#504945)\
+[ ](bg:#665c54)\
+[ ](bg:#7c6f64)\
+$username\
+[](fg:#7c6f64 bg:#d79921)\
+$directory\
+[](fg:#d79921 bg:#458588)\
+$git_branch$git_status\
+[](fg:#458588 bg:#98971a)\
+$nodejs$rust$golang$php\
+[](fg:#98971a bg:#689d6a)\
+$time\
+[](fg:#689d6a bg:#504945)\
+$cmd_duration\
+[ ](fg:#504945)\
+\n$character
+"""
+
+# ========================
+# USER
+# ========================
+
+[username]
+style_user = "bg:#7c6f64 fg:#002b36"
+style_root = "bg:#7c6f64 fg:#fb4934"
+format = "[ 󰀵 $user ]($style)"
+show_always = true
+
+# ========================
+# DIRECTORY
+# ========================
+
+[directory]
+style = "fg:#002b36 bg:#d79921"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+
+# ========================
+# GIT 
+# ========================
+[git_branch]
+symbol = " "
+format = "[$symbol $branch](fg:#ebdbb2 bg:#458588)"
+
+[git_status]
+format = "[$ahead_behind$staged$modified$untracked$renamed$deleted](fg:#ebdbb2 bg:#458588)"
+
+ahead = " ⇡${count}"
+behind = " ⇣${count}"
+staged = " ●${count}"
+modified = " ✚${count}"
+untracked = " ?${count}"
+renamed = " »${count}"
+deleted = " ✖${count}"
+# ========================
+# LANGUAGES
+# ========================
+
+[nodejs]
+symbol = ""
+format = "[ $symbol ($version) ](fg:#002b36 bg:#98971a)"
+
+[rust]
+symbol = ""
+format = "[ $symbol ($version) ](fg:#002b36 bg:#98971a)"
+
+[golang]
+symbol = ""
+format = "[ $symbol ($version) ](fg:#002b36 bg:#98971a)"
+
+[php]
+symbol = ""
+format = "[ $symbol ($version) ](fg:#002b36 bg:#98971a)"
+
+# ========================
+# TIME
+# ========================
+
+[time]
+disabled = false
+time_format = "%R"
+format = "[  $time ](fg:#002b36 bg:#689d6a)"
+
+# ========================
+# COMMAND DURATION
+# ========================
+
+[cmd_duration]
+min_time = 500
+format = "[ ⏱ $duration ](fg:#002b36 bg:#504945)"
+
+# ========================
+# PROMPT SYMBOL
+# ========================
+
+[character]
+success_symbol = "[❯](bold #98971a)"
+error_symbol = "[❯](bold #fb4934)"
