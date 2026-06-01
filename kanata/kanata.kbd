@@ -1,0 +1,42 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  spc
+  a s d f
+  h j k l ;
+  ralt
+)
+
+(defalias
+  ;; SpaceFN
+  navsp (tap-hold 200 250 spc (layer-while-held nav))
+
+  ;; Left-hand home row mods
+  actl (tap-hold 200 250 a lctl)
+  ssft (tap-hold 200 250 s lsft)
+  dmet (tap-hold 200 250 d lmet)
+  falt (tap-hold 200 250 f lalt)
+
+  ;; Right-hand home row mods
+  jctl (tap-hold 200 250 j lctl)
+  ksft (tap-hold 200 250 k lsft)
+  lmet (tap-hold 200 250 l lmet)
+  salt (tap-hold 200 250 ; lalt)
+)
+
+(deflayer base
+  @navsp
+  @actl @ssft @dmet @falt
+  h
+  @jctl @ksft @lmet @salt
+  bspc
+)
+
+(deflayer nav
+  spc
+  a s d f
+  h j k l ;
+  bspc
+)
