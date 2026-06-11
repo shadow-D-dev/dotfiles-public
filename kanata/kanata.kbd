@@ -4,8 +4,15 @@
 
 (defsrc
   spc
+
   a s d f
   h j k l ;
+
+  q w e r
+  y u i o p
+  v n m ,
+
+  lalt
   ralt
 )
 
@@ -13,30 +20,116 @@
   ;; SpaceFN
   navsp (tap-hold 200 250 spc (layer-while-held nav))
 
-  ;; Left-hand home row mods
-  actl (tap-hold 200 250 a lctl)
-  ssft (tap-hold 200 250 s lsft)
-  dmet (tap-hold 200 250 d lmet)
-  falt (tap-hold 200 250 f lalt)
+  ;; E = Mouse Layer
+  mousekey (tap-hold 200 250 e (layer-while-held mouse))
 
-  ;; Right-hand home row mods
-  jctl (tap-hold 200 250 j lctl)
-  ksft (tap-hold 200 250 k lsft)
-  lmet (tap-hold 200 250 l lmet)
-  salt (tap-hold 200 250 ; lalt)
+  ;; Left Alt = Fn Layer
+  fnlayer (layer-while-held fn)
+
+  ;; Home-row mods
+  scmd (tap-hold 200 250 s lmet)
+  dctl (tap-hold 80 120 d lctl)
+  fsft (tap-hold 80 120 f lsft)
+
+  ;; Thumb-adjacent Alt mods
+  valt (tap-hold 200 250 v lalt)
+  nalt (tap-hold 200 250 n lalt)
+
+  ;; Right-hand mods
+  jsft (tap-hold 80 120 j lsft)
+  kctl (tap-hold 80 120 k lctl)
+  lcmd (tap-hold 200 250 l lmet)
+
+  ;; Editing
+  delword (multi lalt bspc)
+  delline (multi lmet bspc)
+
+  ;; Hyper
+  hyper (multi lctl lalt lsft lmet)
 )
 
 (deflayer base
   @navsp
-  @actl @ssft @dmet @falt
+
+  a @scmd @dctl @fsft
   h
-  @jctl @ksft @lmet @salt
-  bspc
+  @jsft @kctl @lcmd ;
+
+  q w @mousekey r
+
+  y u i o p
+  @valt @nalt m ,
+
+  @fnlayer
+  @hyper
 )
 
 (deflayer nav
   spc
+
   a s d f
   h j k l ;
+
+  q w e r
+
+  y
   bspc
+  @delword
+  @delline
+  ret
+
+  v n m ,
+
+  lalt
+  ralt
+)
+
+(deflayer mouse
+  spc
+
+  a s d f
+
+  (movemouse-left 10 5)
+  (movemouse-down 10 5)
+  (movemouse-up 10 5)
+  (movemouse-right 10 5)
+  ;
+
+  q w e r
+
+  mousetapleft
+  (mwheel-up 20 1)
+  (mwheel-down 20 1)
+  o
+  p
+
+  mousetapright
+  v
+  m
+  ,
+
+  lalt
+  ralt
+)
+
+(deflayer fn
+  spc
+
+  a s d f
+
+  h
+  f5 f6 f7 f8
+
+  q w e r
+
+  y
+  f1 f2 f3 f4
+
+  v
+  f9
+  f10
+  ,
+
+  lalt
+  ralt
 )
