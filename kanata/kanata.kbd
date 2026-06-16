@@ -1,11 +1,16 @@
 (defcfg
   process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defchordsv2
+  (f j) esc 50 first-release ()
 )
 
 (defsrc
   spc
 
-  a s d f
+  a s d f g
   h j k l ;
 
   q w e r
@@ -17,57 +22,76 @@
 )
 
 (defalias
+
+  ;; =========================
+  ;; Layers
+  ;; =========================
+
   ;; SpaceFN
-  navsp (tap-hold 200 250 spc (layer-while-held nav))
+  navsp (tap-hold 150 200 spc (layer-while-held nav))
 
   ;; E = Mouse Layer
   mousekey (tap-hold 200 250 e (layer-while-held mouse))
 
-  ;; Left Alt = Fn Layer
-  fnlayer (layer-while-held fn)
+  ;; =========================
+  ;; Home Row Mods
+  ;; =========================
 
-  ;; Home-row mods
+  ;; Left Hand
   scmd (tap-hold 200 250 s lmet)
-  dctl (tap-hold 80 120 d lctl)
-  fsft (tap-hold 80 120 f lsft)
+  dctl (tap-hold 100 150 d lctl)
+  fsft (tap-hold 100 130 f lsft)
 
-  ;; Thumb-adjacent Alt mods
+  ;; Ctrl+Alt Holds
+  gctlalt (tap-hold 200 250 g (multi lctl lalt))
+  hctlalt (tap-hold 200 250 h (multi lctl lalt))
+
+  ;; Right Hand
+  jsft (tap-hold 100 130 j lsft)
+  kctl (tap-hold 100 120 k lctl)
+  lcmd (tap-hold 200 250 l lmet)
+
+  ;; Thumb-Adjacent Alt Mods
   valt (tap-hold 200 250 v lalt)
   nalt (tap-hold 200 250 n lalt)
 
-  ;; Right-hand mods
-  jsft (tap-hold 80 120 j lsft)
-  kctl (tap-hold 80 120 k lctl)
-  lcmd (tap-hold 200 250 l lmet)
-
+  ;; =========================
   ;; Editing
+  ;; =========================
+
   delword (multi lalt bspc)
   delline (multi lmet bspc)
 
+  ;; =========================
+  ;; Special Keys
+  ;; =========================
+
   ;; Hyper
   hyper (multi lctl lalt lsft lmet)
+
+  ;; Dedicated Ctrl+Alt
+  ctlalt (multi lctl lalt)
 )
 
 (deflayer base
   @navsp
 
-  a @scmd @dctl @fsft
-  h
-  @jsft @kctl @lcmd ;
+  a @scmd @dctl @fsft @gctlalt
+  @hctlalt @jsft @kctl @lcmd ;
 
   q w @mousekey r
 
   y u i o p
   @valt @nalt m ,
 
-  @fnlayer
+  @ctlalt
   @hyper
 )
 
 (deflayer nav
   spc
 
-  a s d f
+  a s d f g
   h j k l ;
 
   q w e r
@@ -87,7 +111,7 @@
 (deflayer mouse
   spc
 
-  a s d f
+  a s d f g
 
   (movemouse-left 10 5)
   (movemouse-down 10 5)
@@ -106,28 +130,6 @@
   mousetapright
   v
   m
-  ,
-
-  lalt
-  ralt
-)
-
-(deflayer fn
-  spc
-
-  a s d f
-
-  h
-  f5 f6 f7 f8
-
-  q w e r
-
-  y
-  f1 f2 f3 f4
-
-  v
-  f9
-  f10
   ,
 
   lalt
