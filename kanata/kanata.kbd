@@ -1,10 +1,23 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Kanata Configuration
+;; Global settings and runtime behavior
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defcfg
   process-unmapped-keys yes
   concurrent-tap-hold yes
   log-layer-changes no
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Timing Configuration
+;; Tap/Hold thresholds used throughout the config
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defvar
+  tap-vfast 80
+  hold-vfast 100
+
   tap-fast 100
   hold-fast 150
 
@@ -14,6 +27,11 @@
   tap-slow 200
   hold-slow 250
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Physical Keyboard Layout
+;; Matches the physical ANSI keyboard
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defsrc
   esc 1 2 3 4 5 6 7 8 9 0 - = bspc
@@ -27,39 +45,58 @@
   lctl lmet lalt spc ralt fn menu rctl
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Aliases
+;; Reusable tap-hold behaviors and key combinations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defalias
-  ;; Layer keys
+
+  ;; ---------------------------------------------------------
+  ;; Layer Access
+  ;; ---------------------------------------------------------
+
   navg (tap-hold $tap-med $hold-med g (layer-while-held nav))
   esch (tap-hold $tap-med $hold-med h (layer-while-held escnav))
 
-  ;; Home Row Mods
-  aalt (tap-hold $tap-slow $hold-slow a lalt)
-  scmd (tap-hold $tap-slow $hold-slow s lmet)
+  ;; ---------------------------------------------------------
+  ;; Home Row Modifiers
+  ;; ---------------------------------------------------------
 
-  ;; Fast Ctrl
-  dctl (tap-hold-press 180 100 d lctl)
-  kctl (tap-hold-press 180 100 k lctl)
+  aalt     (tap-hold $tap-slow $hold-slow a lalt)
+  scmd     (tap-hold $tap-slow $hold-slow s lmet)
 
-  fsft (tap-hold $tap-fast $hold-fast f lsft)
-  jsft (tap-hold $tap-fast $hold-fast j lsft)
+  dctl     (tap-hold $tap-fast $hold-fast d lctl)
+  fsft     (tap-hold $tap-fast $hold-fast f lsft)
 
-  lcmd (tap-hold $tap-slow $hold-slow l lmet)
-  semialt (tap-hold $tap-slow $hold-slow ; lalt)
+  jsft     (tap-hold $tap-fast $hold-fast j lsft)
+  kctl     (tap-hold $tap-fast $hold-fast k lctl)
 
-  ;; Ctrl+Alt
+  lcmd     (tap-hold $tap-slow $hold-slow l lmet)
+  semialt  (tap-hold $tap-slow $hold-slow ; lalt)
+
+  ;; ---------------------------------------------------------
+  ;; Thumb/Pinky Modifiers
+  ;; ---------------------------------------------------------
+
   vctlalt (tap-hold $tap-slow $hold-slow v (multi lctl lalt))
   nctlalt (tap-hold $tap-slow $hold-slow n (multi lctl lalt))
 
-  ;; Editing
+  ctlalt  (multi lctl lalt)
+  hyper   (multi lctl lalt lsft lmet)
+
+  ;; ---------------------------------------------------------
+  ;; Editing Shortcuts
+  ;; ---------------------------------------------------------
+
   delword (multi lalt bspc)
   delline (multi lmet bspc)
-
-  ;; Hyper
-  hyper (multi lctl lalt lsft lmet)
-
-  ;; Dedicated Ctrl+Alt
-  ctlalt (multi lctl lalt)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Base Layer
+;; Default typing layer with home-row mods
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (deflayer base
   esc 1 2 3 4 5 6 7 8 9 0 - = bspc
@@ -72,20 +109,29 @@
   ret
 
   lsft
-  z x c @vctlalt b @nctlalt m , . /
+  z x c
+  @vctlalt
+  b
+  @nctlalt
+  m , . /
   rsft
 
   lctl lmet @ctlalt spc @hyper fn menu rctl
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Navigation Layer
+;; Accessed by holding G
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (deflayer nav
   esc 1 2 3 4 5 6 7 8 9 0 - = bspc
 
   tab q w e r t
-  @delline
+  y
   bspc
   @delword
-  o
+  @delline
   p
   [ ] \
 
@@ -97,6 +143,11 @@
 
   lctl lmet lalt spc ralt fn menu rctl
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Escape Layer
+;; Accessed by holding H
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (deflayer escnav
   esc 1 2 3 4 5 6 7 8 9 0 - = bspc
